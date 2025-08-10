@@ -13,7 +13,7 @@ app.add_middleware(SessionMiddleware, secret_key=secrets.token_hex(16))
 
 CLIENT_ID = "e0f64b5f67a7407f917d0ea041ca7c26"       # Replace with your Spotify Client ID
 CLIENT_SECRET = "fecb6807c15043818006662537f8b221"  # Replace with your Spotify Client Secret
-REDIRECT_URI = "http://127.0.0.1:8000/callback"  # Must match your Spotify app Redirect URI
+REDIRECT_URI = "https://backend-9mbs.onrender.com/callback"  # Must match your Spotify app Redirect URI
 
 SCOPE = "user-read-private user-read-email user-read-playback-state user-modify-playback-state user-read-currently-playing user-top-read user-follow-read"
 
