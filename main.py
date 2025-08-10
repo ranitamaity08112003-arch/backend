@@ -5,8 +5,18 @@ import httpx
 from urllib.parse import urlencode
 import os
 import secrets
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins
+    allow_credentials=False,  # Cannot allow credentials with '*'
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # Add session middleware for state param
 app.add_middleware(SessionMiddleware, secret_key=secrets.token_hex(16))
